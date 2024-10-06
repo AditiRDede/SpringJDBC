@@ -1,5 +1,6 @@
 package com.traini8.trainingcenters.service;
 import com.traini8.trainingcenters.Repository.TrainingCenterRepository;
+import com.traini8.trainingcenters.model.TrainingCenter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +17,13 @@ public class TrainingCenterService
         this.trainingCenterRepository = trainingCenterRepository;
     }
 
-    public void addTrainingCenter()
+    public void addTrainingCenter(TrainingCenter trainingCenter)
     {
-        trainingCenterRepository.save();
         System.out.println("call to repo");
+        trainingCenterRepository.save(trainingCenter);
+
     }
-    public List<String> getAllTrainingCenters()
+    public List<TrainingCenter> getAllTrainingCenters()
     {
         return trainingCenterRepository.findAll();
     }

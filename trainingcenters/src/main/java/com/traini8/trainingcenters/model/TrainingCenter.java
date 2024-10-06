@@ -3,22 +3,20 @@ package com.traini8.trainingcenters.model;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
 import java.util.List;
 import java.util.ArrayList;
 
-
 @Component
-@Scope("PROTOTYPE")
+@Scope("prototype")
 public class TrainingCenter
 {
     private String centerName;
-    private int centerCode;
-    private String address;
+    private String centerCode;
+   // private String address;
     private int sutudentCapacity;
-    private List<String> courses;
-    private Long createdOn;
-    private String email;
+   // private List<String> courses;
+    private String createdOn;
+    private String contactEmail;
     private String contactPhone;
 
     public String getCenterName() {
@@ -29,21 +27,21 @@ public class TrainingCenter
         this.centerName = centerName;
     }
 
-    public int getCenterCode() {
+    public String getCenterCode() {
         return centerCode;
     }
 
-    public void setCenterCode(int centerCode) {
+    public void setCenterCode(String centerCode) {
         this.centerCode = centerCode;
     }
 
-    public String getAddress() {
+ /*   public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
-    }
+    }*/
 
     public int getSutudentCapacity() {
         return sutudentCapacity;
@@ -53,29 +51,29 @@ public class TrainingCenter
         this.sutudentCapacity = sutudentCapacity;
     }
 
-    public List<String> getCourses() {
+   /* public List<String> getCourses() {
         return courses;
     }
 
     public void setCourses(List<String> courses) {
         this.courses = courses;
-    }
+    }*/
 
-    public Long getCreatedOn() {
+    public String getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn()
+    public void setCreatedOn(String TimeStamp)
     {
-        this.createdOn = Instant.now().toEpochMilli();
+        this.createdOn=TimeStamp;
     }
 
-    public String getEmail() {
-        return email;
+    public String getContactEmail() {
+        return contactEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
     }
 
     public String getContactPhone() {
@@ -84,5 +82,17 @@ public class TrainingCenter
 
     public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone;
+    }
+
+    @Override
+    public String toString() {
+        return "[" +
+                "centerName='" + centerName + '\'' +
+                ", centerCode='" + centerCode + '\'' +
+                ", sutudentCapacity=" + sutudentCapacity +
+                ", createdOn='" + createdOn + '\'' +
+                ", contactEmail='" + contactEmail + '\'' +
+                ", contactPhone='" + contactPhone + '\'' +
+                ']';
     }
 }
