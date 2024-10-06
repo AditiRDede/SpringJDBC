@@ -10,7 +10,7 @@ public class TrainingcentersApplication
 	public static void main(String[] args)
 	{
 		ApplicationContext context=SpringApplication.run(TrainingcentersApplication.class, args);
-		
+
 
 	}
 
